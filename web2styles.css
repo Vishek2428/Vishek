@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Comic Sans MS,Arial, sans-serif;
+   
+    color: #333;
+}
+
+
+/* Header */
+header {
+    text-align: center;
+    background: #A8D5E3;
+    color: #fff;
+    padding: 1rem 0;
+}
+nav a {
+    color: #080808;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Section */
+main {
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+    text-align: center;
+    background-color:#FF78AC ;
+}
+
+/* Forms */
+.form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 0.8rem;
+    background: #3A7CA5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2F5D83;
+}
+footer{
+    padding: 4rem;
+    text-align: center;
+}
+.pet-collection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4rem;
+    margin: 2rem auto;
+    padding: 0rem;
+    max-width: 1200px;
+}
+
+/* Pet Card Styling */
+.pet-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pet-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.pet-card:hover img {
+    transform: scale(1.1);
+}
+
+.pet-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Pet Info Section */
+.pet-info {
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+}
+
+.pet-info h3 {
+    color: #3A7CA5;
+    margin-bottom: 0.5rem;
+}
+
+.pet-info p {
+    margin: 0.3rem 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+#filters, #pet-list {
+    margin: 0.5rem auto;
+    padding: 1rem;
+    max-width: 800px;
+    text-align: center;
+  }
