@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption - Home</title>
+    <link rel="stylesheet" href="web2styles.css">
+</head>
+<body>
+    <header>
+        <h1 >Pet Adoption Center</h1>
+        <nav>
+            <a href="web2.html">Home</a>
+            <a href="web2about.html">About</a>
+            <a href="web2login.html">Login</a>
+            <a href="web2signup.html">Sign Up</a>
+        </nav>
+    </header>
+    <main>
+        <section id="filters">
+            <h2>Find Your Perfect Pet</h2>
+            <form id="filterForm">
+                <label for="breed">Breed:</label>
+                <input type="text" id="breed" placeholder="e.g., Husky">
+    
+                <label for="age">Age:</label>
+                <select id="age">
+                    <option value="">Any</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+    
+                <label for="size">Size:</label>
+                <select id="size">
+                    <option value="">Any</option>
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+    
+                <button style="background-color: black; margin:6px; color:white" type="button" onclick="applyFilters()">Apply Filters</button>
+            </form>
+        </section>
+        <div class="pet-collection">
+            <!-- Pet Card 1 -->
+            <div class="pet-card">
+                <img style="height:250px" src="german-shepherd.webp" alt="Golden Retriever">
+                <div class="pet-info">
+
+                    <p>Breed: German shepherd</p>
+                    <p>Age: 3 years</p>
+                    <p>Size: Medium</p>
+                </div>
+            </div>
+            <!-- Pet Card 2 -->
+            <div class="pet-card">
+                <img style="height: 250px;" src="akita.webp" alt="Persian Cat">
+                <div class="pet-info">
+
+                    <p>Breed: akita</p>
+                    <p>Age: 2 years</p>
+                    <p>Size: Small</p>
+                </div>
+            </div>
+            <!-- Pet Card 3 -->
+            <div class="pet-card">
+                <img style="height: 250px;" src="beagle.webp" alt="Beagle">
+                <div class="pet-info">
+
+                    <p>Breed: Beagle</p>
+                    <p>Age: 4 years</p>
+                    <p>Size: Medium</p>
+                </div>
+            </div>
+            <!-- Pet Card 4 -->
+            <div class="pet-card">
+                <img style="height:250px" src="husky.webp" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Husky</p>
+                    <p>Age: 1 year</p>
+                    <p>Size: Small</p>
+                </div>
+            </div>
+            <!-- pet card 5 -->
+            <div class="pet-card">
+                <img style="height:250px" src="rottweiler.webp" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Rottweiler</p>
+                    <p>Age: 2 years</p>
+                    <p>Size: Medium</p>
+                </div>
+            </div>
+            <!-- pet card 6 -->
+            <div class="pet-card">
+                <img style="height:250px" src="whippet.webp" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Whippet</p>
+                    <p>Age: 3 years</p>
+                    <p>Size: Small</p>
+                </div>
+            </div>
+            <!-- pet card 7 -->
+            <div class="pet-card">
+                <img style="height:250px" src="australian shepherd.jpg" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Austrlian Shepherd</p>
+                    <p>Age: 5 years</p>
+                    <p>Size: large</p>
+                </div>
+            </div>
+            <!-- pet card 8 -->
+            <div class="pet-card">
+                <img style="height:250px" src="feist.jpg" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Feist</p>
+                    <p>Age: 3 years</p>
+                    <p>Size: Medium</p>
+                </div>
+            </div>
+            <!-- pet card 9 -->
+            <div class="pet-card">
+                <img style="height:250px" src="Pembroke .jpg" alt="Siamese Cat">
+                <div class="pet-info">
+
+                    <p>Breed: Pembroke</p>
+                    <p>Age: 2 years</p>
+                    <p>Size: Small</p>
+                </div>
+            </div>
+        </div>
+    
+        <section>
+            <h2>Who We Are</h2>
+            <p>We are a dedicated team helping animals find loving homes.</p>
+        </section>
+        <section>
+            <h2>Our Mission</h2>
+            <p>Our mission is to connect adoptable pets with loving families.</p>
+        </section>
+    </main>
+
+    <footer style="background-color: #F2F0EA;">
+        <p>© 2024 Pet Adoption Center. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function applyFilters() {
+            const breed = document.getElementById('breed').value.toLowerCase();
+            const age = document.getElementById('age').value;
+            const size = document.getElementById('size').value.toLowerCase();
+
+            const petCards = document.querySelectorAll('.pet-card');
+
+            petCards.forEach(card => {
+                const petBreed = card.querySelector('.pet-info p:nth-child(1)').textContent.toLowerCase().split(': ')[1];
+                const petAge = card.querySelector('.pet-info p:nth-child(2)').textContent.split(': ')[1].split(' ')[0];
+                const petSize = card.querySelector('.pet-info p:nth-child(3)').textContent.toLowerCase().split(': ')[1];
+
+                if ((breed === '' || petBreed.includes(breed)) &&
+                    (age === '' || petAge === age) &&
+                    (size === '' || petSize === size)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
